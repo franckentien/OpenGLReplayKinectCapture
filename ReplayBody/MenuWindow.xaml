@@ -1,0 +1,92 @@
+﻿<Window x:Class="ReplayBody.MenuWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        ResizeMode="NoResize"
+        mc:Ignorable="d"
+        Title="MenuWindow" Height="375" Width="310" Top="50" Left="50">
+    <Grid Margin="0,0,0,0" Height="350" Width="300">
+        <Rectangle Fill="Gray" />
+        <TextBlock Name="TextBlockInfo" Text="Please load a file." FontWeight="Bold" FontSize="30"
+                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,310" />
+        <Grid Margin="58,56,58,108">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="60" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Row="0" Grid.Column="0" />
+            <Button Name="UpButton" Grid.Row="0" Grid.Column="1" PreviewMouseDown="Button_MouseDown"
+                    PreviewMouseUp="Button_MouseUp">
+                <Image Source="Icon/up.png" />
+            </Button>
+            <Button Name="ExpandButton" Grid.Row="0" Grid.Column="2" PreviewMouseDown="Button_MouseDown"
+                    PreviewMouseUp="Button_MouseUp">
+                <Image Source="Icon/expand.png" />
+            </Button>
+            <Button Name="LeftButton" Grid.Row="1" Grid.Column="0" PreviewMouseDown="Button_MouseDown"
+                    PreviewMouseUp="Button_MouseUp">
+                <Image Source="Icon/left.png" />
+            </Button>
+            <Button Name="ResetButton" Grid.Row="1" Grid.Column="1" PreviewMouseDown="Button_MouseDown"
+                    PreviewMouseUp="Button_MouseUp">
+                <Image Source="Icon/reset.png" Height="50" />
+            </Button>
+            <Button Name="RightButton" Grid.Row="1" Grid.Column="2" PreviewMouseDown="Button_MouseDown"
+                    PreviewMouseUp="Button_MouseUp">
+                <Image Source="Icon/right.png" />
+            </Button>
+            <Button Grid.Row="2" Grid.Column="0" />
+            <Button Name="DownButton" Grid.Row="2" Grid.Column="1" PreviewMouseDown="Button_MouseDown"
+                    PreviewMouseUp="Button_MouseUp">
+                <Image Source="Icon/down.png" />
+            </Button>
+            <Button Name="ReduceButton" Grid.Row="2" Grid.Column="2" PreviewMouseDown="Button_MouseDown"
+                    PreviewMouseUp="Button_MouseUp">
+                <Image Source="Icon/reduce.png" />
+            </Button>
+        </Grid>
+        <Grid Margin="10,242,10,44">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="68" />
+                <ColumnDefinition Width="68" />
+                <ColumnDefinition Width="68" />
+                <ColumnDefinition Width="68" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Row="0" Grid.Column="0" Name="LoadButton" Width="60" Height="60" Click="LoadButton_OnClick">
+                <Image Source="Icon/folder.png" />
+            </Button>
+            <Button Grid.Row="0" Grid.Column="0" Name="EjectButton" Width="60" Height="60" Click="EjectButton_OnClick"
+                    Visibility="Hidden">
+                <Image Source="Icon/eject.png" />
+            </Button>
+            <Button Grid.Row="0" Grid.Column="1" Name="PlayButton" Width="60" Height="60" Click="PlayButton_OnClick">
+                <Image Source="Icon/play.png" />
+            </Button>
+            <Button Grid.Row="0" Grid.Column="1" Name="PauseButton" Width="60" Height="60" Click="PauseButton_OnClick"
+                    Visibility="Hidden">
+                <Image Source="Icon/pause.png" />
+            </Button>
+            <Button Grid.Row="0" Grid.Column="2" Name="PreviousButton" Width="60" Height="60"
+                    PreviewMouseDown="Button_MouseDown" PreviewMouseUp="Button_MouseUp">
+                <Image Source="Icon/previous.png" />
+            </Button>
+            <Button Grid.Row="0" Grid.Column="3" Name="NextButton" Width="60" Height="60"
+                    PreviewMouseDown="Button_MouseDown" PreviewMouseUp="Button_MouseUp">
+                <Image Source="Icon/next.png" />
+            </Button>
+        </Grid>
+        <ScrollBar Name="ScrollBarFrame" Orientation="Horizontal" Margin="10,298,10,10" Value="0" Minimum="0"
+                   Maximum="0" Scroll="ScrollBarFrame_OnScroll" />
+    </Grid>
+</Window>
